@@ -46,52 +46,47 @@ img {
 }
 
 .header {
-  padding-top: 20px;
-  padding-bottom: 20px;
   width: auto;
+  height: 80px;
+  background: #FFFFFF;
 }
 
 .header .header-menu {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-}
-
-.header .navigation {
-  display: flex;
-  align-items: center;
-  margin-top: 32px;
-  margin-bottom: 32px;
 }
 
 .header .logo {
+  display: inline-block;
+  padding: 24px 0px 25px 15px;
   font-family: "Raleway", sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 26px;
   line-height: 31px;
-  /* identical to box height */
   letter-spacing: 0.03em;
   color: #000000;
-  margin-right: 93px;
 }
 
 .header .navigation-list {
-  display: flex;
-  align-items: center;
+  display:flex;
+  padding: 32px 0px 32px 0px;
+  margin: 0px 305px 0px 93px;
 }
 
-.navigation-list .item {
-  font-family: Roboto;
+.navigation-list .item:not(:last-child) {
+  margin-right: 50px;
+}
+
+.navigation-list .link-active,
+.navigation-list .link {
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.02em;
-}
-
-.header .item:not(:last-child) {
-  margin-right: 50px;
+  color: var(--other-text-color);
 }
 
 .navigation-list .link {
@@ -107,59 +102,77 @@ img {
   color: var(--primary-text-color);
 }
 
-.header .address {
-  margin-left: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 32px;
-  margin-bottom: 32px;
-}
-
-.header .email-header {
+.header .email-box {
   display: flex;
   width: 161px;
-  justify-content: space-between;
+  height: 16px;
+  margin: 0px 30px 0px 0px;
+  padding: 32px 0px 32px 0px;
   align-items: center;
-  margin-right: 30px;
 } 
 
-
-
-.header .email:hover,
-.header .email:focus {
-  color: var(--primary-text-color);
-}
-
-.header .email {
+.email-box .email-link {
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.02em;
-  color: var(--other-text-color);
+  color: #757575;
+  margin: 0px;
+  padding: 0px;
 }
 
-.header .phone-header {
+.email-box .email-link::before {
+  display:inline-block;
+  content: "";
+  width: 16px;
+  height: 12px;
+  margin-right: 2px;
+  background-image: url("../images/main/header/envelope.svg")
+}
+
+.email-box .email-link:hover,
+.email-box .email-link:focus {
+  color: var(--primary-text-color); 
+}
+
+.header .phone-box {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   width: 142px;
+  height: 16px;
+  margin: 0px;
+  padding: 32px 15px 32px 0px;
+  align-items: center;
 }
 
-.address .phone {
+.phone-box .phone-link {
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.02em;
-  color: var(--other-text-color);
+  color: #757575;
+}
+
+.phone-box .phone-link::before {
+  display:inline-block;
+  content: "";
+  width: 10px;
+  height: 16px;
+  margin-right: 10px;
+  background-image: url("../images/sprite.svg#icon-phone-icon")
+}
+
+.phone-box .phone-link:hover,
+.phone-box .phone-link:focus {
+  color: var(--primary-text-color); 
 }
 
 .tagline {
   width: auto;
+  height: 600px;
   background-color: #2f303a;
   background-image: linear-gradient(
     rgba(47, 48, 58, 0.4),
@@ -168,10 +181,16 @@ img {
     url("../images/main/tagline/tagline_bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 200px 0px;
+}
+
+.tagline .title-box {
+  text-align: center;
 }
 
 .title {
+  display: inline-block;
+  padding: 200px 252px 0px 252px;
+  margin: 0px 0px 30px 0px;
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 900;
@@ -185,7 +204,6 @@ img {
 }
 
 .tagline .button-order-box {
-  padding-top: 30px;
   text-align: center;
 }
 
@@ -193,6 +211,8 @@ img {
   display: inline-block;
   width: 200px;
   height: 50px;
+  padding: 0px;
+  margin: none;
   border-radius: 4px;
   background-color: #2196f3;
 
@@ -265,6 +285,11 @@ img {
   margin-top: 10px;
 }
 
+.our-work .title-box {
+  text-align: center;
+  padding: 0px;
+}
+
 .our-work .title {
   font-family: "Roboto", sans-serif;
   font-style: normal;
@@ -274,6 +299,7 @@ img {
   text-align: center;
   letter-spacing: 0.03em;
   color: #212121;
+  padding: 0px;
 }
 
 .our-work .presentation-list {
@@ -296,6 +322,10 @@ img {
 .our-team {
   width: auto;
   background: #f5f4fa;
+}
+
+.our-team .title-box {
+  text-align: center;
 }
 
 .our-team .title {
@@ -359,27 +389,6 @@ img {
   padding-top: 10px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .our-team .social-box {
   display: flex;
   justify-content: space-between;
@@ -388,34 +397,40 @@ img {
   margin: 16px 32px 30px 32px;
 }
 
-
-
 .our-team .social-link {
   display:flex;
   justify-content: center;
   align-items: center;
   width: 44px;
   height: 44px;
-  background-color: #ffff;
+  background-color: #ffffff;
   border-radius: 50%;
   
 }
 
+.social-link:hover,
+.social-link:focus {
+  background-color: #2196f3;
+}
 
-/* .social-link:hover .social-icon,
+.social-link:hover .social-icon,
 .social-link:focus .social-icon {
   fill: #FFFFFF;
-} */
-
+}
 
 .our-team .social-icon {
    width: 20px;
    height: 20px;
+   fill: #afb1b8;
 }
 
 .clients {
   width: auto;
   background: #ffffff;
+}
+
+.clients .title-box {
+  text-align: center;
 }
 
 .clients .title {
@@ -430,58 +445,49 @@ img {
   padding-top: 94px;
 }
 
-.clients .box-icon {
+.clients .client-box {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 1170px;
+  height: 182px;
   padding-top: 50px;
   padding-bottom: 94px;
 }
 
-.clients .item-icon {
+.clients .client-item {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 170px;
   height: 90px;
+}
+
+.clients .client-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 90px;
+  padding: 0px;
+  margin: none;
   border: 1px solid #AFB1B8;
   border-radius: 4px;
 }
 
-.clients .client-icon {
-  
-  
+.client-icon {
+  fill:#afb1b8;
 }
 
+.client-link:hover,
+.client-link:focus {
+  border: 1px solid #2196f3;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.client-link:hover .client-icon,
+.client-link:focus .client-icon {
+  fill: #2196f3;
+}
 
 .footer {
   width: auto;
@@ -489,46 +495,107 @@ img {
   background: #2f303a;
 }
 
-.footer .logo-box {
-  width: 145;
-  height: 31;
-  padding-top: 60px;
-}
-.footer .logo {
- color: #ffffff;
+.footer .footer-info {
+  display: flex;
+  justify-content: start;
 }
 
-.footer .address-box {
+.footer .first-box {
+  display: block;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin-right: 70px;
+}
+
+.footer .logo {
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 31px;
+/* identical to box height */
+  letter-spacing: 0.03em;
+  color: #ffffff;
+}
+
+.footer .contacts {
   width: 231px;
   height: 81px;
   margin-top: 20px;
-}
-
-.footer .address {
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 14px;
-line-height: 24px;
-/* or 171% */
-letter-spacing: 0.03em;
-color: #FFFFFF;
 }
 
 .footer .item :not(:last-child) {
   padding-bottom: 9px;
 }
 
+.footer .address {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  color: #FFFFFF;
+}
+
 .footer .email,
 .footer .phone {
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 14px;
-line-height: 24px;
-/* or 171% */
-letter-spacing: 0.03em;
-color: rgba(255, 255, 255, 0.6);
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer .second-box {
+  display: inline-block;
+  width: 206px;
+  height: 80px;
+  padding-top: 72px;
+  padding-bottom: 100px;
+}
+
+.footer .invitation {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.footer .footer-social-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 206px;
+  height: 44px;
+  margin-top: 20px;
+}
+
+.footer .social-link {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.footer .social-link:hover,
+.footer .social-link:focus {
+  background-color: #2196f3;
+}
+
+.footer .social-icon {
+   width: 20px;
+   height: 20px;
+   fill: #ffffff;
 }
 
 .body {
@@ -572,6 +639,19 @@ color: rgba(255, 255, 255, 0.6);
   color: #ffffff;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 .gallary .portfolio-box {
   margin-right: auto;
   margin-left: auto;
@@ -588,12 +668,24 @@ color: rgba(255, 255, 255, 0.6);
   margin-left: -30px;
 }
 
-.portfolio-list .item {
+.portfolio-box .item {
   flex-basis: calc(100/3 - 36px);
   margin-left: 30px;
   margin-top: 30px;
   margin-right: 0px;
   border: 1px solid #eeeeee;
+}
+
+.portfolio-box .link {
+  display: inline-block;
+  width: 370px;
+  height: 404px;
+  box-shadow: none;
+}
+
+.portfolio-box .link:hover,
+.portfolio-box .link:focus {
+  box-shadow:  1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .portfolio-list .title-box {
